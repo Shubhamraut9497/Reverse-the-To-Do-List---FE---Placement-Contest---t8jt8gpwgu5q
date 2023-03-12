@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import "../styles/App.css";
+import React, { useState } from 'react'
+import '../styles/App.css';
 
-function ToDo(todoId, createdAt) {
+function ToDo({ todoId, createdAt }) {
   return (
     <tr>
       <td>
         <p>{todoId}</p>
       </td>
       <td>
-        <input />
+        <input placeholder="Enter your task" />
       </td>
       <td>
         <p>{createdAt}</p>
@@ -18,18 +18,17 @@ function ToDo(todoId, createdAt) {
 }
 
 function App() {
-  const [val, setVal] = useState("");
-
   const [todos, setTodos] = useState([
     {
-      id: "todo1",
-      createdAt: "20:30"
+      id: 'todo1',
+      createdAt: '20:30',
     },
     {
-      id: "todo2",
-      createdAt: "18:00"
-    }
+      id: 'todo2',
+      createdAt: '18:00',
+    },
   ]);
+
   const reverseOrder = () => {
     setTodos([...todos].reverse());
   };
